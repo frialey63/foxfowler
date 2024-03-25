@@ -1,0 +1,5 @@
+      SUBROUTINE FRESET()
+
+      RETURN
+
+      END
