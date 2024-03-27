@@ -9,3 +9,10 @@ all:
 
 clean:
 	rm -f *.exe
+
+progress:
+	mv fort.2 fort.4
+	sed -i 's/^ //' fort.4
+
+reset:
+	rm -f fort.*
