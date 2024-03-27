@@ -10,7 +10,7 @@ clean:
 	rm -f $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS)
-	$(FC) $(LDFLAGS) $(OBJECTS) -o $@
+	$(FC) $(LDFLAGS) $(OBJECTS) -o $@.exe
 
 .f.o:
 	$(FC) $(FFLAGS) $< -o $@

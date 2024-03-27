@@ -24,7 +24,7 @@ C     "INVALID CHARACTER FOUND"
 C     "COMPLETE WORD IS VALID"
       IFLAG = 1
       GO TO 5
-    3 WRITE (1,4)
+    3 WRITE (6,4)
 
     5 RETURN
 

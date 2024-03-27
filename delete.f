@@ -18,20 +18,20 @@ C     "CHECK USER"
       CALL USERCHECK
 C     "VALID USER"
 
-      WRITE (1,1)
+      WRITE (6,1)
       F = 0
 
 C     "REQUEST CUSTOMER DETAILS"
-      WRITE (1,2)
-  500 READ (3,3) CSNAME
+      WRITE (6,2)
+  500 READ (5,3) CSNAME
       DO 501 N=1,7
       CALL FOURCHECK(CSNAME(N), IRESLT)
       IF(IRESLT.EQ.0) GO TO 500
   501 CONTINUE
-      WRITE (1,4)
+      WRITE (6,4)
   510 ATEMPT = 0
       CALL FTRAP (DIGITS)
-      READ (3,5) ACCTNO
+      READ (5,5) ACCTNO
       CALL FRESET
       IF(ATEMPT.GT.0) GO TO 510
 
@@ -51,7 +51,7 @@ C     "FIND CUSTOMER"
       IF(I.NE.4) GO TO 54
    53 CONTINUE
       IF(CODENO.EQ.ACCTNO) GO TO 22
-      WRITE (1,21)
+      WRITE (6,21)
       STOP
    54 WRITE (2,55) BANKYR
       WRITE (2,56) BRNAME, ANAME    , CODENO,
@@ -65,9 +65,9 @@ C     "FIND CUSTOMER"
 
 C     "END OF FILE OLD"
    15 IF (F.EQ.1) GO TO 17
-      WRITE (1,16) CSNAME, ACCTNO
+      WRITE (6,16) CSNAME, ACCTNO
       STOP
-   17 WRITE (1,18) CODENO, ANAME    
+   17 WRITE (6,18) CODENO, ANAME    
       STOP
 
 C     "CHECK IF THE ACCOUNT HAS ANY MONEY IN IT"
@@ -82,10 +82,10 @@ C     "CHECK IF THE ACCOUNT HAS ANY MONEY IN IT"
       GO TO 26
    28 IF (TOTAL.EQ.0.0) GO TO 32
       IF(TOTAL.GT.0.0) GO TO 30
-      WRITE (1,29)
+      WRITE (6,29)
       STOP
    30 F = 1
-      WRITE (1,31)
+      WRITE (6,31)
       STOP
    32 F = 1
       GO TO 11

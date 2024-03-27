@@ -35,9 +35,9 @@ C     "IS THE INVALID CHARACTER A FULL STOP?"
     3 I = 1
       CALL COMP(I,WORD,K,CH(28),1)
       IF(I.EQ.1) GO TO 5
-      WRITE (1,4)
+      WRITE (6,4)
       GO TO 7
-    5 WRITE (1,6)
+    5 WRITE (6,6)
 
     7 RETURN
 
