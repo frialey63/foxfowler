@@ -1,11 +1,18 @@
       SUBROUTINE COMP(ILEN, REF, I, TST, J)
 
-      DIMENSION REF(50), TST(50)
+      INTEGER REF, TST
 
       MATCH = 0
 
       DO 1 L = 1, ILEN
-      IF(REF(I + L - 1).EQ.TST(J + L - 1)) GO TO 2
+
+      IREF = ISHFT(REF, -8 * (I + L - 2))
+      IREF = AND(Z'000000FF', IREF)
+
+      ITST = ISHFT(TST, -8 * (J + L - 2))
+      ITST = AND(Z'000000FF', ITST)
+
+      IF(IREF.EQ.ITST) GO TO 2
       GO TO 3
     2 MATCH = MATCH + 1
     1 CONTINUE  
