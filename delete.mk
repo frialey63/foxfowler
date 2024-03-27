@@ -1,4 +1,4 @@
-FFLAGS=-c
+FFLAGS=-c -w
 LDFLAGS=
 SOURCES=delete.f usercheck.f fourcheck.f digits.f FTRAP.f FRESET.f COMP.f
 OBJECTS=$(SOURCES:.f=.o)

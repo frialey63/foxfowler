@@ -1,4 +1,4 @@
-FFLAGS=-c
+FFLAGS=-c -w
 LDFLAGS=
 SOURCES=origin.f usercheck.f fourcheck.f COMP.f
 OBJECTS=$(SOURCES:.f=.o)
