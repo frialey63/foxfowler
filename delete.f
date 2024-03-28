@@ -64,7 +64,8 @@ C     "FIND CUSTOMER"
       GO TO 14
 
 C     "END OF FILE OLD"
-   15 IF (F.EQ.1) GO TO 17
+   15 WRITE(2, 55) BANKYR
+      IF (F.EQ.1) GO TO 17
       WRITE (6,16) CSNAME, ACCTNO
       STOP
    17 WRITE (6,18) CODENO, ANAME    
