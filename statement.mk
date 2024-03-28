@@ -4,6 +4,8 @@ SOURCES=statement.f usercheck.f fourcheck.f digits.f FTRAP.f FRESET.f COMP.f COP
 OBJECTS=$(SOURCES:.f=.o)
 EXECUTABLE=statement
 
+.PHONY: all clean
+
 all: $(SOURCES) $(EXECUTABLE)
 
 clean:

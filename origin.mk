@@ -4,6 +4,8 @@ SOURCES=origin.f usercheck.f fourcheck.f COMP.f
 OBJECTS=$(SOURCES:.f=.o)
 EXECUTABLE=origin
 
+.PHONY: all clean
+
 all: $(SOURCES) $(EXECUTABLE)
 
 clean:

@@ -4,6 +4,8 @@ SOURCES=setup.f usercheck.f fourcheck.f yearcheck.f datecheck.f float.f day.f FT
 OBJECTS=$(SOURCES:.f=.o)
 EXECUTABLE=setup
 
+.PHONY: all clean
+
 all: $(SOURCES) $(EXECUTABLE)
 
 clean:

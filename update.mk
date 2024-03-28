@@ -4,6 +4,8 @@ SOURCES=update.f usercheck.f fourcheck.f digits.f float.f datecheck.f day.f FTRA
 OBJECTS=$(SOURCES:.f=.o)
 EXECUTABLE=update
 
+.PHONY: all clean
+
 all: $(SOURCES) $(EXECUTABLE)
 
 clean:
