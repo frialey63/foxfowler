@@ -15,7 +15,7 @@ clean:
 	rm -f *.exe
 
 backup:
-	cp fort.4 "fort.4_`date +%M%H%d%m`"
+	cp fort.4 "fort.4_`date +%H:%M_%d-%m-%y`"
 
 progress:
 	mv fort.2 fort.4
