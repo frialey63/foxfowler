@@ -1,6 +1,6 @@
 NOOP=/bin/sh -c true
 
-.PHONY: all clean progress reset balance delete origin printout setup statement update
+.PHONY: all clean backup progress reset balance delete origin printout setup statement update
 
 all:
 	make -f balance.mk
@@ -14,8 +14,10 @@ all:
 clean:
 	rm -f *.exe
 
-progress:
+backup:
 	cp fort.4 "fort.4_`date +%M%H%d%m`"
+
+progress:
 	mv fort.2 fort.4
 	sed -i 's/^ //' fort.4
 
@@ -43,17 +45,14 @@ run_update:
 statement:
 	statement.exe
 
-run_update:
-	update.exe
-
-delete: run_delete progress
+delete: run_delete backup progress
 	$(NOOP)
 
 origin: run_origin progress
 	$(NOOP)
 
-setup: run_setup progress
+setup: run_setup backup progress
 	$(NOOP)
 
-update: run_update progress
+update: run_update backup progress
 	$(NOOP)
