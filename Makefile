@@ -18,7 +18,7 @@ backup:
 	cp fort.4 "fort.4_`date +%H:%M_%d-%m-%y`"
 
 progress:
-	mv fort.2 fort.4
+	if [ -f "fort.2" ]; then mv fort.2 fort.4; fi
 	sed -i 's/^ //' fort.4
 
 reset:
