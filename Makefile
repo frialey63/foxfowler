@@ -1,4 +1,5 @@
 NOOP=/bin/sh -c true
+SHELL := /bin/bash
 
 .PHONY: all clean backup progress reset balance delete origin printout setup statement update
 
@@ -18,7 +19,7 @@ backup:
 	cp fort.4 "fort.4_`date +%H:%M_%d-%m-%y`"
 
 progress:
-	if [ -f "fort.2" ]; then mv fort.2 fort.4; fi
+	if [ -f "fort.2" ] && [ "`grep -c ZZZZZZZZ fort.2`" == "1" ]; then mv fort.2 fort.4; fi
 	sed -i 's/^ //' fort.4
 
 reset:
