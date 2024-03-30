@@ -42,7 +42,9 @@ C     "FIND CUSTOMER"
       CALL COMP(I,BANKYR(N), 1,EOF(N),1)
       IF(I.NE.4) GO TO 51
    50 CONTINUE
+      WRITE(2, 55) BANKYR
       GO TO 15
+
    51 READ (4,52) BRNAME, ANAME    , CODENO,
      &SHEETN, BALFWD, BALDT, BALMTH
       DO 53 M=1,7
@@ -64,8 +66,7 @@ C     "FIND CUSTOMER"
       GO TO 14
 
 C     "END OF FILE OLD"
-   15 WRITE(2, 55) BANKYR
-      IF (F.EQ.1) GO TO 17
+   15 IF (F.EQ.1) GO TO 17
       WRITE (6,16) CSNAME, ACCTNO
       STOP
    17 WRITE (6,18) CODENO, ANAME    
@@ -90,6 +91,7 @@ C     "CHECK IF THE ACCOUNT HAS ANY MONEY IN IT"
       STOP
    32 F = 1
       GO TO 11
+
       STOP
 
     1 FORMAT (1H /1H /1H /1H ,
