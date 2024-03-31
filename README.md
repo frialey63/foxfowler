@@ -5,13 +5,15 @@ My 'A' Level Computer Science project of 1981 from Ashmole School, Southgate.
 
 ## METHOD
 
-Adobe Scan app on Android
+Starting from a faded listing in a dusty box in my loft...
 
-OCR by Windows "Text Extractor" PowerToy
+1 Adobe Scan app on Android
 
-GNU F77 compiler and make
+2 OCR by Windows "Text Extractor" PowerToy
 
-Microsoft VS Code
+3 GNU F77 compiler and make
+
+4 Microsoft VS Code
 
 ## TODO
 
