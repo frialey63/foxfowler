@@ -7,10 +7,10 @@
 
       DO 1 L = 1, ILEN
 
-      IF(L.EQ.1) GO TO 10
-      IF(L.EQ.2) GO TO 20
-      IF(L.EQ.3) GO TO 30
-      IF(L.EQ.4) GO TO 40
+      IF (L.EQ.1) GO TO 10
+      IF (L.EQ.2) GO TO 20
+      IF (L.EQ.3) GO TO 30
+      IF (L.EQ.4) GO TO 40
 
    10 IDST = IAND(Z'FFFFFF00', IDST)
       ISRC = IAND(Z'000000FF', SRC)

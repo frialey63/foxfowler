@@ -25,26 +25,23 @@ progress:
 reset:
 	rm -f fort.*
 
-balance:
-	balance.exe
-
 run_delete:
 	delete.exe
 
 run_origin:
 	origin.exe
 
-printout:
-	printout.exe
-
 run_setup:
 	setup.exe
+
+run_statement:
+	statement.exe
 
 run_update:
 	update.exe
 
-statement:
-	statement.exe
+balance:
+	balance.exe
 
 delete: run_delete backup progress
 	$(NOOP)
@@ -52,7 +49,13 @@ delete: run_delete backup progress
 origin: run_origin progress
 	$(NOOP)
 
+printout:
+	printout.exe
+
 setup: run_setup backup progress
+	$(NOOP)
+
+statement: run_statement backup progress
 	$(NOOP)
 
 update: run_update backup progress
